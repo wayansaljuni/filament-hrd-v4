@@ -32,7 +32,7 @@ class MkarsTable
                     ->label('DEPARTEMEN')
                     ->searchable()->sortable(),
                 TextColumn::make('ket')
-                    ->label('NAMA KARYAWAN-')
+                    ->label('NAMA KARYAWAN')
                     ->searchable()->sortable(),
                 TextColumn::make('alrm')
                     ->label('ALAMAT RUMAH')
