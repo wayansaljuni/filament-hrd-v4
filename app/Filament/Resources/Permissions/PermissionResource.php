@@ -21,9 +21,13 @@ class PermissionResource extends Resource
     protected static ?string $model = Permission::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
+    // protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-key';
+    // protected static string|UnitEnum|null $navigationGroup = 'Settings';
     protected static ?string $recordTitleAttribute = 'Permission';
-
+    // public static function getNavigationCluster(): ?string
+    // {
+    //     return Settings::class;
+    // }
     public static function form(Schema $schema): Schema
     {
         return PermissionForm::configure($schema);
