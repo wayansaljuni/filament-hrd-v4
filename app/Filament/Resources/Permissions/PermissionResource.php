@@ -20,14 +20,21 @@ class PermissionResource extends Resource
 {
     protected static ?string $model = Permission::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedKey;
     // protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-key';
-    // protected static string|UnitEnum|null $navigationGroup = 'Settings';
+    protected static string|\UnitEnum|null $navigationGroup = 'Settings';
     protected static ?string $recordTitleAttribute = 'Permission';
-    // public static function getNavigationCluster(): ?string
-    // {
-    //     return Settings::class;
-    // }
+    protected static ?int $navigationSort = 1;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+    public static function getNavigationBadgeColor(): ?string
+    {
+        return 'gray'; // primary, success, warning, danger
+    }
+
     public static function form(Schema $schema): Schema
     {
         return PermissionForm::configure($schema);

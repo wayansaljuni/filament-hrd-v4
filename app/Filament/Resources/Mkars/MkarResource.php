@@ -19,8 +19,9 @@ class MkarResource extends Resource
 {
     protected static ?string $model = Mkar::class;
     protected static ?string $recordTitleAttribute = 'ket';
-    
-    protected static ?string $navigationLabel = 'Data Karyawan';
+    protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
+    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationLabel = 'Karyawan';
 
     public static function form(Schema $schema): Schema
     {

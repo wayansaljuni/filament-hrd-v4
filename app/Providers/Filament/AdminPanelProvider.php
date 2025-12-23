@@ -14,6 +14,7 @@ use Filament\FontProviders\LocalFontProvider;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Filament\Http\Middleware\AuthenticateSession;
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -31,14 +32,17 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->sidebarCollapsibleOnDesktop()
+            // ->collapsedSidebarWidth('9rem')
             // ->sidebarFullyCollapsibleOnDesktop()
             // ->font('Poppins')
-            ->topbar(false)
+            // ->topbar(false)
             ->maxContentWidth(Width::Full)
             // ->simplePageMaxContentWidth(Width::Small)
             ->databaseTransactions()
             ->favicon('favicon.ico')
             ->brandName('NS SYSTEM')
+            // ->topNavigation()
+            // ->sidebarWidth('20rem')
             ->spa()
             ->font(
                 'Inter',
@@ -73,7 +77,9 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
                 ])
-            
+            ->plugins([
+                    FilamentShieldPlugin::make(),
+                ])
             ;
     }
 }

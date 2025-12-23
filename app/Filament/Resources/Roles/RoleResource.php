@@ -20,10 +20,28 @@ class RoleResource extends Resource
 {
     protected static ?string $model = Role::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-    // protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-key';
-    // public static function getNavigationGroup(): ?string { return 'Settings'; }
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShieldCheck;
+    protected static string|\UnitEnum|null $navigationGroup = 'Settings';
+    protected static ?int $navigationSort = 2;
     protected static ?string $recordTitleAttribute = 'Role';
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+    public static function getNavigationBadgeColor(): ?string
+    {
+        return 'info'; // primary, success, warning, danger
+    }
+    public static function getPluralModelLabel(): string
+    {
+        return 'Role';
+    }
+
+    public static function getModelLabel(): string
+    {
+        return '';
+    }
 
     public static function form(Schema $schema): Schema
     {

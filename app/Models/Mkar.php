@@ -16,4 +16,9 @@ class Mkar extends Model
         return $this->belongsTo(\App\Models\Mcab::class, 'kdcab', 'kdcab');
     }
 
+    public function mkarmdept()
+    {
+        return $this->belongsTo(\App\Models\Mdept::class, 'kddep', 'kddep');
+    }
+
 }

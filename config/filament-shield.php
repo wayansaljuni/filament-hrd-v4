@@ -259,5 +259,22 @@ return [
     */
 
     'register_role_policy' => true,
+    
+    'generator' => [
+        'option' => 'policies_and_permissions', // Pastikan ini opsinya
+    ],
 
+    'resource_feature_permissions' => [
+        'view',
+        'view_any',
+        'create',
+        'update',
+        'restore',
+        'restore_any',
+        'reorder',
+        'delete',
+        'delete_any',
+        'force_delete',
+        'force_delete_any',
+    ],
 ];
