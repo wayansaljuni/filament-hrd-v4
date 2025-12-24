@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Mdept;
+use App\Models\Jenisabsen;
 use Illuminate\Database\Eloquent\Model;
 
 class Pengajuanabsen extends Model

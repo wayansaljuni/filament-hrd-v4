@@ -16,9 +16,15 @@ class Mkar extends Model
         return $this->belongsTo(\App\Models\Mcab::class, 'kdcab', 'kdcab');
     }
 
-    public function mkarmdept()
+    public function mdept()
     {
         return $this->belongsTo(\App\Models\Mdept::class, 'kddep', 'kddep');
     }
-
+    public function atasan()
+    {
+        /**
+         * belongsTo(NamaModel, Foreign_Key_di_mkar, Owner_Key_Atasan_di_mkar)
+         */
+        return $this->belongsTo(MKar::class, 'nik_atasan', 'nik');
+    }
 }
